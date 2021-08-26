@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "70b78836-faf3-4cba-9cee-10071bb95920",
+		"name": "Conversion API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LengthConversion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Length Conv Test - Received Correct Result\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson.centimeter).to.eql(1000.0);\r",
+							"  pm.expect(responseJson.meter).to.eql(10.0);\r",
+							"  pm.expect(responseJson.kilometer).to.eql(0.01);\r",
+							"  pm.expect(responseJson.inch).to.eql(393.7);\r",
+							"  pm.expect(responseJson.feet).to.eql(32.800000000000004);\r",
+							"  pm.expect(responseJson.mile).to.eql(0.0062137119);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/length?value=1000&from=centimeter&to=inch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"length"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "1000"
+						},
+						{
+							"key": "from",
+							"value": "centimeter"
+						},
+						{
+							"key": "to",
+							"value": "inch"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TemperatureConversion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Temperature Conv Test - Received Correct Result\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson.fahrenheit).to.eql(66.2);\r",
+							"  pm.expect(responseJson.celsius).to.eql(19.0);\r",
+							"  pm.expect(responseJson.kelvin).to.eql(292.15);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/temperature?value=19&from=celsius&to=fahrenheit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temperature"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "19"
+						},
+						{
+							"key": "from",
+							"value": "celsius"
+						},
+						{
+							"key": "to",
+							"value": "fahrenheit"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SpeedConversion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Speed Conv Test - Received Correct Result\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson.kph).to.eql(100);\r",
+							"  pm.expect(responseJson.mph).to.eql(62.137100000000004);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/speed?value=100&from=kph&to=mph",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"speed"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "100"
+						},
+						{
+							"key": "from",
+							"value": "kph"
+						},
+						{
+							"key": "to",
+							"value": "mph"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VolumeConversion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Volume Conv Test - Received Correct Result\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson.milliliter).to.eql(1000);\r",
+							"  pm.expect(responseJson.liter).to.eql(1.0);\r",
+							"  pm.expect(responseJson.fluidOunce).to.eql(33.814);\r",
+							"  pm.expect(responseJson.gallon).to.eql(0.219969);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/volume?value=1000&from=milliliter&to=fluidounce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"volume"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "1000"
+						},
+						{
+							"key": "from",
+							"value": "milliliter"
+						},
+						{
+							"key": "to",
+							"value": "fluidounce"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeightConversion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Weight Conv Test - Received Correct Result\", () => {\r",
+							"  const responseJson = pm.response.json();\r",
+							"  pm.expect(responseJson.gram).to.eql(1000);\r",
+							"  pm.expect(responseJson.kilogram).to.eql(1.0);\r",
+							"  pm.expect(responseJson.ounce).to.eql(35.27396195);\r",
+							"  pm.expect(responseJson.pound).to.eql(2.20462262);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/weight?value=1000&from=gram&to=ounce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weight"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "1000"
+						},
+						{
+							"key": "from",
+							"value": "gram"
+						},
+						{
+							"key": "to",
+							"value": "ounce"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LengthConversionError",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Error Status code is 400\", () => {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/length?value=1000&from=centimeter&to=inches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"length"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "1000"
+						},
+						{
+							"key": "from",
+							"value": "centimeter"
+						},
+						{
+							"key": "to",
+							"value": "inches"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TemperatureConversionError",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Error Status code is 400\", () => {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/temperature?value=19&from=celsius&to=farenhite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"temperature"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "19"
+						},
+						{
+							"key": "from",
+							"value": "celsius"
+						},
+						{
+							"key": "to",
+							"value": "farenhite"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SpeedConversionError",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Error Status code is 400\", () => {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/speed?value=100&from=km&to=mph",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"speed"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "100"
+						},
+						{
+							"key": "from",
+							"value": "km"
+						},
+						{
+							"key": "to",
+							"value": "mph"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VolumeConversionError",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Error Status code is 400\", () => {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/volume?value=1000&from=ml&to=fluidounce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"volume"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "1000"
+						},
+						{
+							"key": "from",
+							"value": "ml"
+						},
+						{
+							"key": "to",
+							"value": "fluidounce"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeightConversionError",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Error Status code is 400\", () => {\r",
+							"  pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/weight?value=1000&from=gramm&to=ounce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"weight"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "1000"
+						},
+						{
+							"key": "from",
+							"value": "gramm"
+						},
+						{
+							"key": "to",
+							"value": "ounce"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
